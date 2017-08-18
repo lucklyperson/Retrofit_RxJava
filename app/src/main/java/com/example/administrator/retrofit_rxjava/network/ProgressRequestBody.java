@@ -1,7 +1,5 @@
 package com.example.administrator.retrofit_rxjava.network;
 
-import com.shaodianbao.util.LogUtil;
-
 import java.io.File;
 import java.io.IOException;
 

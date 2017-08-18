@@ -18,13 +18,14 @@ public class RetrofitServiceUtil {
     private static OkHttpClient okHttpClient;
 
     private RetrofitServiceUtil() {
+        //设置okhttp的响应式时间
         okHttpClient = new OkHttpClient();
         okHttpClient.newBuilder()
                 .connectTimeout(30, TimeUnit.SECONDS)
                 .readTimeout(30, TimeUnit.SECONDS)
                 .writeTimeout(30, TimeUnit.SECONDS)
                 .addInterceptor(new HeaderInterceptor())             //添加拦截器未全局设置header
-                .addInterceptor(new LogInterceptor());                  //添加拦截器打印日志
+                .addInterceptor(new LogInterceptor());               //添加拦截器打印日志
 
 
     }
@@ -49,8 +50,6 @@ public class RetrofitServiceUtil {
                 .build();
         return retrofit.create(RetrofitService.class);
     }
-
-
 
 
 }

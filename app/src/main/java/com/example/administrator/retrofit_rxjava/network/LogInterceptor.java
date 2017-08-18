@@ -1,6 +1,5 @@
 package com.example.administrator.retrofit_rxjava.network;
 
-import com.shaodianbao.util.LogUtil;
 
 import java.io.IOException;
 
@@ -19,7 +18,6 @@ public class LogInterceptor implements Interceptor {
 
         //请求前先打印日志
         Request request = chain.request();
-        LogUtil.log("LogInterceptor", "request" + request.url() + "," + request.headers());
         Response response = chain.proceed(chain.request());
         //   LogUtil.log("LogInterceptor", "response" + response.body().string());
         return response;

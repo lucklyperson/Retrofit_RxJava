@@ -1,7 +1,5 @@
 package com.example.administrator.retrofit_rxjava.network;
 
-import com.shaodianbao.entity.GoodsCost;
-import com.shaodianbao.entity.RedPacket;
 
 import java.util.List;
 import java.util.Map;
@@ -10,9 +8,6 @@ import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.http.Body;
-import retrofit2.http.Field;
-import retrofit2.http.FieldMap;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
@@ -35,22 +30,12 @@ public interface RetrofitService {
     @Streaming
     Observable<ResponseBody> apk_download(@Url String url);
 
-    //抽红包的接口
-    @FormUrlEncoded
-    @POST("api.php?con=user&act=chou")
-    Observable<RedPacket> grab_redPacket(@Field("id") String id, @Field("auth") String auth);
-
-    //捎物订单基础价格
-    @FormUrlEncoded
-    @POST("api.php?con=price&act=basePrice")
-    Observable<GoodsCost> goods_basePrice(@FieldMap() Map<String, String> map);
-
-    //更改头像
+    //单文件上传头像（方式一）
     @Multipart
     @POST("api.php?con=user&act=updateavatar")
     Observable<ResponseBody> upload_avatar(@Part MultipartBody.Part part, @Part("auth") RequestBody paramsBody);
 
-    //更改头像
+    //单文件上传头像（方式二）
     @POST("api.php?con=user&act=updateavatar")
     Observable<ResponseBody> upload_avatar(@Body RequestBody body);
 

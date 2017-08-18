@@ -8,10 +8,48 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.administrator.retrofit_rxjava.MainActivity">
+    tools:context="com.example.administrator.retrofit_rxjava.ui.MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/btn_download"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="下载（带进度）" />
+
+    <Button
+        android:id="@+id/btn_single_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_download"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="41dp"
+        android:text="单文件上传" />
+
+    <Button
+        android:id="@+id/btn_single_upload_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="单文件带进度上传" />
+
+    <Button
+        android:id="@+id/btn_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_single_upload_progress"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="41dp"
+        android:text="多文件上传" />
+
+    <Button
+        android:id="@+id/btn_upload_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="37dp"
+        android:text="多文件带进度上传" />
 </RelativeLayout>
