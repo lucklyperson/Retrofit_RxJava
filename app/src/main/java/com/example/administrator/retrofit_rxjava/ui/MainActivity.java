@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btn_down;                   //下载
     private Button btn_single;                 //单文件上传
+    private Button btn_single_progress;        //带进度上传
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,19 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        btn_single_progress = (Button) findViewById(R.id.btn_single_upload_progress);
+        btn_single_progress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SingleUploadProgressActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
+
 
 }

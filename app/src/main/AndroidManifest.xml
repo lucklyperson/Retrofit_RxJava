@@ -23,7 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.SingleUploadActivity" />
-        <activity android:name=".ui.DownLoadActivity"></activity>
+        <activity android:name=".ui.DownLoadActivity" />
+        <activity android:name=".ui.SingleUploadProgressActivity"></activity>
     </application>
 
 </manifest>
